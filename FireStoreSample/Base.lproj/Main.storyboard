@@ -15,18 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiO-HI-rY2">
-                                <rect key="frame" x="161" y="433" width="92" height="30"/>
-                                <state key="normal" title="データを追加"/>
-                                <connections>
-                                    <action selector="addData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4K-Jw-P9i"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="02z-Sg-Mhp">
+                                <rect key="frame" x="161" y="397" width="92" height="102"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiO-HI-rY2">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                        <state key="normal" title="データを追加"/>
+                                        <connections>
+                                            <action selector="addData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4K-Jw-P9i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g6-mx-VGM">
+                                        <rect key="frame" x="0.0" y="72" width="92" height="30"/>
+                                        <state key="normal" title="サインアウト"/>
+                                        <connections>
+                                            <action selector="signOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hl0-6K-QYq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HiO-HI-rY2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aaF-2v-zGV"/>
-                            <constraint firstItem="HiO-HI-rY2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pG5-M8-E9E"/>
+                            <constraint firstItem="02z-Sg-Mhp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CHb-Tk-okw"/>
+                            <constraint firstItem="02z-Sg-Mhp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xj4-UJ-eCz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

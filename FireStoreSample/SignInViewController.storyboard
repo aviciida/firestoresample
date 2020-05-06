@@ -22,19 +22,31 @@
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="fieldEdited:" destination="yQV-1i-tIm" eventType="editingChanged" id="WSC-Fk-UC1"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U68-Ia-k30">
                                         <rect key="frame" x="0.0" y="95" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="fieldEdited:" destination="yQV-1i-tIm" eventType="editingChanged" id="HBd-Hl-LC9"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbM-kz-nyc">
                                         <rect key="frame" x="0.0" y="190" width="334" height="30"/>
                                         <state key="normal" title="ログイン"/>
+                                        <connections>
+                                            <action selector="signInDidTap:" destination="yQV-1i-tIm" eventType="touchUpInside" id="BAe-KZ-SJH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8M7-Qh-ie2">
                                         <rect key="frame" x="0.0" y="281" width="334" height="30"/>
                                         <state key="normal" title="ユーザー登録"/>
+                                        <connections>
+                                            <action selector="segueToSignUp:" destination="yQV-1i-tIm" eventType="touchUpInside" id="CYm-hA-Y2t"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -47,6 +59,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ydu-GJ-sfR"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="lHg-Bw-CKO" id="ZK0-wn-rwz"/>
+                        <outlet property="passwordField" destination="U68-Ia-k30" id="ftC-dP-NOv"/>
+                        <outlet property="signInButton" destination="kbM-kz-nyc" id="BY3-E1-9Xw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vd8-ov-7EB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

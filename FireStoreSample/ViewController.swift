@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 class ViewController: UIViewController {
     var firestore: Firestore!
     override func viewDidLoad() {
@@ -21,9 +22,14 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let storyBoard = UIStoryboard(name: "SignInViewController", bundle: Bundle(for: SignInViewController.self))
-        let vc = storyBoard.instantiateInitialViewController()!
-        self.present(vc, animated: true, completion: nil)
+        guard let user = Auth.auth().currentUser else {
+            let storyBoard = UIStoryboard(name: "SignInViewController", bundle: Bundle(for: SignInViewController.self))
+            let vc = storyBoard.instantiateInitialViewController()!
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
+        
+        print(user.uid)
     }
 
     @IBAction func addData(_ sender: Any) {
@@ -35,6 +41,19 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func signOut(_ sender: Any) {
+        let auth = Auth.auth()
+        do {
+            try auth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        
+        let vc = UIStoryboard(name: "SignInViewController", bundle: Bundle(for: SignInViewController.self)).instantiateInitialViewController()!
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     
 }
 
