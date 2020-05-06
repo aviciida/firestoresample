@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
@@ -18,15 +19,23 @@ class SignUpViewController: UIViewController {
             self.registerButton.isEnabled = false
         }
     }
+    var firestore: Firestore!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        firestore = Firestore.firestore()
+    }
     
     @IBAction func registerButtonDidTap(_ sender: Any) {
         guard let email = emailField.text, let password = passwordField.text else { return }
         Auth.auth().createUser(withEmail: email, password: password, completion: {[weak self] (res, err) in
+            guard let self = self else { return }
             if let error = err {
                 print(error.localizedDescription)
+            } else if let result = res {
+                self.firestore.collection("users").document(result.user.uid).setData(["createdAt": Date()])
+                self.dismiss(animated: true, completion: nil)
             }
-            print(res)
-            self?.dismiss(animated: true, completion: nil)
         })
 
     }

@@ -55,7 +55,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func segueToMyPage(_ sender: Any) {
-        
+        guard let user = Auth.auth().currentUser else { return }
+        var date: Date? = nil
+        let docRef = firestore.collection("users").document(user.uid)
+        docRef.getDocument { [weak self] (document, error) in
+            if let err = error {
+                print(err.localizedDescription)
+            } else if let doc = document {
+                guard let data = doc.data() else { return }
+                date = data["createdAt"] as? Date
+            }
+        }
+        let vc = MyPageViewController(nameString: user.displayName ?? "名無さん", uidString: user.uid, date: date)
+        self.present(vc, animated: true, completion: nil)
     }
     
 }
