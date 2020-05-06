@@ -21,6 +21,8 @@
 		A8BCF03B2462ADDC0054AB8F /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */; };
 		A8BCF03D2462AE960054AB8F /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */; };
 		A8BCF03F2462AEA10054AB8F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */; };
+		A8BCF0412462CA0B0054AB8F /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */; };
+		A8BCF0432462CA190054AB8F /* MyPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
 		A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
 		A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageViewController.storyboard; sourceTree = "<group>"; };
 		C44BB7E7DA5BAF622BAD154F /* Pods_FireStoreSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireStoreSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E761ECD139D67B149DD4632C /* Pods-FireStoreSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.debug.xcconfig"; path = "Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.debug.xcconfig"; sourceTree = "<group>"; };
 		F453B6D9E48CD32C466877C7 /* Pods-FireStoreSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.release.xcconfig"; path = "Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */,
 				A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */,
 				A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */,
+				A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */,
+				A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */,
 				A8B9210B2462926D0003E22F /* Main.storyboard */,
 				A8B9210E2462926E0003E22F /* Assets.xcassets */,
 				A8B921102462926E0003E22F /* LaunchScreen.storyboard */,
@@ -279,6 +285,7 @@
 				A8B9210F2462926E0003E22F /* Assets.xcassets in Resources */,
 				A8B9210D2462926D0003E22F /* Main.storyboard in Resources */,
 				A8BCF03D2462AE960054AB8F /* SignUpViewController.storyboard in Resources */,
+				A8BCF0432462CA190054AB8F /* MyPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8BCF0392462ADBF0054AB8F /* SignInViewController.swift in Sources */,
+				A8BCF0412462CA0B0054AB8F /* MyPageViewController.swift in Sources */,
 				A8B9210A2462926D0003E22F /* ViewController.swift in Sources */,
 				A8B921062462926D0003E22F /* AppDelegate.swift in Sources */,
 				A8B921082462926D0003E22F /* SceneDelegate.swift in Sources */,

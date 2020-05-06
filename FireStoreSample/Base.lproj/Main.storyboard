@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="02z-Sg-Mhp">
-                                <rect key="frame" x="161" y="397" width="92" height="102"/>
+                                <rect key="frame" x="161" y="361" width="92" height="174"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiO-HI-rY2">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
@@ -30,6 +30,13 @@
                                         <state key="normal" title="サインアウト"/>
                                         <connections>
                                             <action selector="signOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hl0-6K-QYq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntH-fo-fYT">
+                                        <rect key="frame" x="0.0" y="144" width="92" height="30"/>
+                                        <state key="normal" title="マイページ"/>
+                                        <connections>
+                                            <action selector="segueToMyPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38p-vY-KQb"/>
                                         </connections>
                                     </button>
                                 </subviews>
