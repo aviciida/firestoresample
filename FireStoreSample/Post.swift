@@ -12,6 +12,7 @@ struct Post {
     let id: String
     let userId: String
     let content: String
+    var user: User?
     let postedTimeInterval: Double
     var postedAt: String {
         let formatter = DateFormatter()

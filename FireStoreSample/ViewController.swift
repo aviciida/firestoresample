@@ -79,13 +79,40 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
             }
             self.posts = []
             for snapShot in content.documents {
-                guard let post = Post(snapShot: snapShot) else { continue }
+                guard var post = Post(snapShot: snapShot) else { continue }
                 self.posts.append(post)
             }
             self.posts = self.posts.sorted { (a, b) -> Bool in
                 a.postedTimeInterval > b.postedTimeInterval
             }
-            self.postsTableView.reloadData()
+            self.addUserToPost()
+        }
+    }
+    
+    func addUserToPost() {
+        let dispatchGroup = DispatchGroup()
+        // 直列キュー / attibutes指定なし
+        let dispatchQueue = DispatchQueue(label: "queue")
+        var newPosts:[Post] = []
+        for p in posts {
+            var post = p
+            dispatchGroup.enter()
+            dispatchQueue.async(group: dispatchGroup) {
+                self.firestore.collection("users").document(post.userId).getDocument { (userResult, userError) in
+                    if let err = userError {
+                        print("failed to get user snapshot: \(err.localizedDescription)")
+                        return
+                    }
+                    guard let snapshot = userResult else { return }
+                    post.user = User(snapShot: snapshot)
+                    newPosts.append(post)
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.posts = newPosts
+            self?.postsTableView.reloadData()
         }
     }
     
@@ -117,10 +144,11 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
                     print(err.localizedDescription)
                 } else if let doc = document {
                     guard let data = doc.data() else { return }
-                    let timeInterval = data["createdAt"] as! Double
+                    let timeInterval = data["createdTimeInterval"] as! Double
                     date = Date(timeIntervalSince1970: timeInterval)
                 }
                 let vc = MyPageViewController.instantiate(nameString: user.displayName ?? "名無さん", uidString: user.uid, date: date)
+                vc.presentationController?.delegate = self
                 self.present(vc, animated: true, completion: nil)
             }
         })
@@ -159,6 +187,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.likedLabel.text = String(post.likes)
         cell.currentUserLikedHandler = self.currentUserLikedHandler
         cell.currentUserDislikedHandler = self.currentUserDisLikedHandler
+        cell.displayNameLabel.text = post.user?.displayName.count == 0 ? "名無さん" : post.user!.displayName
         if let user = Auth.auth().currentUser {
             let liked = post.likedUserIds.contains(user.uid)
             cell.currentUserLikedThisPost = post.likedUserIds.contains(user.uid)

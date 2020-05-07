@@ -25,9 +25,10 @@ struct User {
         self.createdTimeInterval = createdTimeInterval
     }
     
-    init?(snapShot: QueryDocumentSnapshot) {
-        let data = snapShot.data()
-        guard let uid = data["uid"] as? String, let displayName = data["displayName"] as? String, let createdTimeInterval = data["createdTimeInterval"] as? Double else { return nil }
-        self.init(uid: uid, displayName: displayName, createdTimeInterval: createdTimeInterval)
+    init?(snapShot: DocumentSnapshot) {
+        guard let data = snapShot.data() else { return nil }
+        let displayName: String = data["displayName"] as? String ?? "名無さん"
+        guard let createdTimeInterval = data["createdTimeInterval"] as? Double else { return nil }
+        self.init(uid: snapShot.documentID, displayName: displayName, createdTimeInterval: createdTimeInterval)
     }
 }

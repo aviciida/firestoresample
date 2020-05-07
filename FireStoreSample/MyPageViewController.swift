@@ -29,6 +29,7 @@ class MyPageViewController: UIViewController {
     var nameString: String = ""
     var uidString: String = ""
     var date: Date? = nil
+    var firestore: Firestore!
     
     static func instantiate(nameString: String, uidString: String, date: Date?) -> MyPageViewController {
         let vc = UIStoryboard(name: String(describing: MyPageViewController.self), bundle: Bundle(for: MyPageViewController.self)).instantiateInitialViewController()! as MyPageViewController
@@ -47,6 +48,7 @@ class MyPageViewController: UIViewController {
         if let date = date {
             self.createdDate.text = formatter.string(from: date)
         }
+        firestore = Firestore.firestore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,17 +64,22 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func doneButtonDidTap(_ sender: Any) {
-        guard let name = displayNameEditField.text else { return }
+        guard let name = displayNameEditField.text, let user = Auth.auth().currentUser else { return }
         displayName.isHidden = false
         displayNameEditField.isHidden = true
         doneButton.isHidden = true
         displayName.text = name
         nameString = name
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = name
-        changeRequest?.commitChanges { (error) in
+        let changeRequest = user.createProfileChangeRequest()
+        changeRequest.displayName = name
+        changeRequest.commitChanges { (error) in
             if let err = error {
                 print("Failed to update displayname: \(err.localizedDescription)")
+            }
+        }
+        firestore.collection("users").document(user.uid).updateData(["displayName": name]) { error in
+            if let err = error {
+                print("Failed to update user's name: \(err.localizedDescription)")
             }
         }
     }

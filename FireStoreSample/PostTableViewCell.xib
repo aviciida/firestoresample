@@ -71,6 +71,9 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7Z-AV-PG3">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <connections>
+                                                            <action selector="likeButtonDidTap:" destination="GNb-QH-WJW" eventType="touchUpInside" id="Ioe-N8-COz"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

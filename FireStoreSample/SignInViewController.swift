@@ -32,6 +32,8 @@ class SignInViewController: UIViewController {
         super.viewDidAppear(animated)
         if let _ = Auth.auth().currentUser {
             self.dismiss(animated: true, completion: nil)
+            guard let presentationController = self.presentationController else { return }
+            presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
         }
     }
     
