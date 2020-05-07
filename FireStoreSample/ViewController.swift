@@ -57,6 +57,7 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
         guard let _ = Auth.auth().currentUser else {
             let storyBoard = UIStoryboard(name: String(describing: SignInViewController.self), bundle: Bundle(for: SignInViewController.self))
             let vc = storyBoard.instantiateInitialViewController()!
+            vc.isModalInPresentation = true
             self.present(vc, animated: true, completion: nil)
             return
         }
@@ -80,6 +81,9 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
             for snapShot in content.documents {
                 guard let post = Post(snapShot: snapShot) else { continue }
                 self.posts.append(post)
+            }
+            self.posts = self.posts.sorted { (a, b) -> Bool in
+                a.postedTimeInterval > b.postedTimeInterval
             }
             self.postsTableView.reloadData()
         }
