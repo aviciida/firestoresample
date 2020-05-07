@@ -32,8 +32,6 @@ class SignInViewController: UIViewController {
         super.viewDidAppear(animated)
         if let _ = Auth.auth().currentUser {
             self.dismiss(animated: true, completion: nil)
-            guard let presentationController = self.presentationController else { return }
-            presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
         }
     }
     
@@ -48,12 +46,15 @@ class SignInViewController: UIViewController {
     @IBAction func signInDidTap(_ sender: Any) {
         guard let email = emailField.text, let password = passwordField.text else { return }
         Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] (res, err) in
+            guard let self = self else { return }
             if let error = err {
                 print(error.localizedDescription)
             }
             if let result = res {
                 print(result.user)
-                self?.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+                guard let presentationController = self.presentationController else { return }
+                presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
             }
         })
     }
