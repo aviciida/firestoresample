@@ -101,6 +101,8 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
             }
             
             let vc = UIStoryboard(name: String(describing: SignInViewController.self), bundle: Bundle(for: SignInViewController.self)).instantiateInitialViewController()!
+            vc.isModalInPresentation = true
+            vc.presentationController?.delegate = self
             self.present(vc, animated: true, completion: nil)
         })
         
