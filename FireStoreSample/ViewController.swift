@@ -19,6 +19,13 @@ class ViewController: UIViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         firestore = Firestore.firestore()
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let rightBarButton = UIBarButtonItem(title: "menu", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        navigationItem.rightBarButtonItem = rightBarButton
+        
         firestore.collection("posts").getDocuments { (result, error) in
             if let err = error {
                 print("Failed to get content: \(err.localizedDescription)")
@@ -34,11 +41,7 @@ class ViewController: UIViewController {
             self.postsTableView.reloadData()
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let rightBarButton = UIBarButtonItem(title: "menu", style: .plain, target: self, action: #selector(rightBarButtonTapped))
-        navigationItem.rightBarButtonItem = rightBarButton
-    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
