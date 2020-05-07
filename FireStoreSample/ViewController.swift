@@ -59,15 +59,18 @@ class ViewController: UIViewController {
         var date: Date? = nil
         let docRef = firestore.collection("users").document(user.uid)
         docRef.getDocument { [weak self] (document, error) in
+            guard let self = self else { return }
             if let err = error {
                 print(err.localizedDescription)
             } else if let doc = document {
                 guard let data = doc.data() else { return }
-                date = data["createdAt"] as? Date
+                let timeInterval = data["createdAt"] as! Double
+                date = Date(timeIntervalSince1970: timeInterval)
             }
+            let vc = MyPageViewController.instantiate(nameString: user.displayName ?? "名無さん", uidString: user.uid, date: date)
+            self.present(vc, animated: true, completion: nil)
         }
-        let vc = MyPageViewController(nameString: user.displayName ?? "名無さん", uidString: user.uid, date: date)
-        self.present(vc, animated: true, completion: nil)
+
     }
     
 }

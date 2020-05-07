@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController {
             if let error = err {
                 print(error.localizedDescription)
             } else if let result = res {
-                self.firestore.collection("users").document(result.user.uid).setData(["createdAt": Date()])
+                self.firestore.collection("users").document(result.user.uid).setData(["createdAt": Date().timeIntervalSince1970])
                 self.dismiss(animated: true, completion: nil)
             }
         })

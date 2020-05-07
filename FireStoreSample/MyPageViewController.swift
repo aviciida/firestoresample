@@ -14,25 +14,24 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var displayName: UILabel!
     @IBOutlet weak var uid: UILabel!
     @IBOutlet weak var createdDate: UILabel!
-    var nameString: String
-    var uidString: String
-    var date: Date?
+    var nameString: String = ""
+    var uidString: String = ""
+    var date: Date? = nil
     
-    init(nameString: String, uidString: String, date: Date?) {
+    static func instantiate(nameString: String, uidString: String, date: Date?) -> MyPageViewController {
+        let vc = UIStoryboard(name: String(describing: MyPageViewController.self), bundle: Bundle(for: MyPageViewController.self)).instantiateInitialViewController()! as MyPageViewController
+        vc.nameString = nameString
+        vc.uidString = uidString
+        vc.date = date
+        return vc
+    }
 
-       // 受け取った引数でプロパティを初期化
-       self.nameString = nameString
-       self.uidString = uidString
-        self.date = date
-        
-       // クラスの持つ指定イニシャライザを呼び出す
-       super.init(nibName: nil, bundle: nil)
-   }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.displayName.text = nameString
         self.uid.text = uidString
         let formatter = DateFormatter()
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         if let date = date {
             self.createdDate.text = formatter.string(from: date)
         }
@@ -41,9 +40,5 @@ class MyPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
-   // 新しく init を定義した場合に必須
-   required init?(coder aDecoder: NSCoder) {
-       fatalError("init(coder:) has not been implemented")
-   }
+
 }
