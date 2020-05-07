@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         firestore = Firestore.firestore()
+        postsTableView.register(UINib(nibName: String(describing: PostTableViewCell.self), bundle: Bundle(for: PostTableViewCell.self)), forCellReuseIdentifier: String(describing: PostTableViewCell.self))
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let user = Auth.auth().currentUser else {
+        guard let _ = Auth.auth().currentUser else {
             let storyBoard = UIStoryboard(name: String(describing: SignInViewController.self), bundle: Bundle(for: SignInViewController.self))
             let vc = storyBoard.instantiateInitialViewController()!
             self.present(vc, animated: true, completion: nil)
@@ -120,7 +121,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as! PostTableViewCell
+
+        cell.userIdLabel.text = post.userId
+        cell.postContentLabel.text = post.content
+        cell.postedDateLabel.text = post.postedAt
+        cell.likedLabel.text = String(post.likes)
+        return cell
     }
     
     
