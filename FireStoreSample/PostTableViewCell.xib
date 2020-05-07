@@ -19,16 +19,16 @@
                         <rect key="frame" x="8" y="8" width="398" height="167"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="64Q-5T-EOH">
-                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="87" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-jB-bJ5">
-                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywK-Nn-RAr">
-                                        <rect key="frame" x="55.5" y="0.0" width="38" height="20"/>
+                                        <rect key="frame" x="49" y="0.0" width="38" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="UeL-82-D1z"/>
                                         </constraints>
@@ -111,6 +111,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="displayNameLabel" destination="YbF-jB-bJ5" id="KKB-oj-eGG"/>
                 <outlet property="likeIconImage" destination="s6m-KH-gGG" id="smS-AY-6NB"/>
                 <outlet property="likedLabel" destination="1P4-Sy-J6k" id="cBn-Co-IEN"/>
                 <outlet property="postContentLabel" destination="cDf-yc-HzC" id="TDX-Eb-DZ1"/>

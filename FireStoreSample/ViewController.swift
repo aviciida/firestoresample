@@ -153,7 +153,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let post = posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as! PostTableViewCell
 
-        cell.userIdLabel.text = post.userId
+        cell.userIdLabel.text = "(uid: \(post.userId))"
         cell.postContentLabel.text = post.content
         cell.postedDateLabel.text = post.postedAt
         cell.likedLabel.text = String(post.likes)
