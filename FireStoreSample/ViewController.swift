@@ -101,6 +101,12 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func segueToNewPost(_ sender: Any) {
+        let vc = UIStoryboard(name: String(describing: NewPostViewController.self), bundle: Bundle(for: NewPostViewController.self)).instantiateInitialViewController()!
+        present(vc, animated: true, completion: nil)
+    }
+    
 
     
 }

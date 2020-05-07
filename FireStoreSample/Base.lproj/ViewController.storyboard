@@ -19,12 +19,22 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqq-zV-GQ8">
+                                <rect key="frame" x="353.5" y="800" width="20.5" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="square.and.pencil" catalog="system"/>
+                                <connections>
+                                    <action selector="segueToNewPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAU-a9-Z45"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qPS-rA-EKJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="72d-ko-et0"/>
                             <constraint firstItem="qPS-rA-EKJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fst-R5-6n3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uqq-zV-GQ8" secondAttribute="bottom" constant="40" id="Wiu-sG-hll"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qPS-rA-EKJ" secondAttribute="trailing" id="idR-Bh-Uuw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uqq-zV-GQ8" secondAttribute="trailing" constant="40" id="mQC-zN-OIi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qPS-rA-EKJ" secondAttribute="bottom" id="wp8-xb-X4p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -35,7 +45,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="139"/>
+            <point key="canvasLocation" x="105.79710144927537" y="91.741071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+    </resources>
 </document>

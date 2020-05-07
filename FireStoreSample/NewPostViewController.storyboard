@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bap-hs-jgb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Post View Controller-->
+        <scene sceneID="a0U-qd-Jtw">
+            <objects>
+                <viewController id="bap-hs-jgb" customClass="NewPostViewController" customModule="FireStoreSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x6A-nP-gm1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-jE-3Xk">
+                                <rect key="frame" x="40" y="318" width="334" height="260"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you feelin?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZDt-4i-SDp">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Scs-PH-SRS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-2d-H0x">
+                                        <rect key="frame" x="151.5" y="230" width="31" height="30"/>
+                                        <state key="normal" title="投稿"/>
+                                        <connections>
+                                            <action selector="postButtonDidTap:" destination="bap-hs-jgb" eventType="touchUpInside" id="C9N-zr-TnP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZDt-4i-SDp" firstAttribute="width" secondItem="9lC-jE-3Xk" secondAttribute="width" id="KKV-Fg-cGD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cWl-Ik-A59" firstAttribute="trailing" secondItem="9lC-jE-3Xk" secondAttribute="trailing" constant="40" id="1gu-IB-bRI"/>
+                            <constraint firstItem="9lC-jE-3Xk" firstAttribute="leading" secondItem="cWl-Ik-A59" secondAttribute="leading" constant="40" id="Hbs-LE-Swx"/>
+                            <constraint firstItem="9lC-jE-3Xk" firstAttribute="centerY" secondItem="x6A-nP-gm1" secondAttribute="centerY" id="SSZ-6R-f5P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cWl-Ik-A59"/>
+                    </view>
+                    <connections>
+                        <outlet property="postField" destination="ZDt-4i-SDp" id="6U8-4K-M43"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCx-DH-h42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="102"/>
+        </scene>
+    </scenes>
+</document>
