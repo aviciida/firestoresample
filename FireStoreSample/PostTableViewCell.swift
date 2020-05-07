@@ -21,7 +21,6 @@ class PostTableViewCell: UITableViewCell {
     var currentUserLikedThisPost: Bool = false
     
     @IBAction func likeButtonDidTap(_ sender: Any) {
-        let currentLikedCount = (Int(likedLabel.text ?? "0") ?? 0)
         if currentUserLikedThisPost {
             currentUserDislikedHandler?(getIndexPath())
         } else {

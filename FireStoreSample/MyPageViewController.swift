@@ -8,12 +8,24 @@
 
 import Foundation
 import UIKit
-
+import FirebaseAuth
+import FirebaseFirestore
 class MyPageViewController: UIViewController {
     
     @IBOutlet weak var displayName: UILabel!
     @IBOutlet weak var uid: UILabel!
     @IBOutlet weak var createdDate: UILabel!
+    @IBOutlet weak var displayNameEditField: UITextField! {
+        didSet {
+            self.displayNameEditField.isHidden = true
+        }
+    }
+    @IBOutlet weak var doneButton: UIButton! {
+        didSet {
+            self.doneButton.isHidden = true
+        }
+    }
+    
     var nameString: String = ""
     var uidString: String = ""
     var date: Date? = nil
@@ -40,5 +52,29 @@ class MyPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
+    @IBAction func displayNameDidTap(_ sender: Any) {
+        displayName.isHidden = true
+        displayNameEditField.isHidden = false
+        doneButton.isHidden = false
+        displayNameEditField.text = nameString
+        displayNameEditField.becomeFirstResponder()
+    }
+    
+    @IBAction func doneButtonDidTap(_ sender: Any) {
+        guard let name = displayNameEditField.text else { return }
+        displayName.isHidden = false
+        displayNameEditField.isHidden = true
+        doneButton.isHidden = true
+        displayName.text = name
+        nameString = name
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = name
+        changeRequest?.commitChanges { (error) in
+            if let err = error {
+                print("Failed to update displayname: \(err.localizedDescription)")
+            }
+        }
+    }
+    
 }
