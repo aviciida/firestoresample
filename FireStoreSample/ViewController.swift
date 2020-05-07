@@ -12,11 +12,24 @@ import FirebaseAuth
 class ViewController: UIViewController {
     
     @IBOutlet weak var postsTableView: UITableView!
-    
+    var posts: [Post] = []
     var firestore: Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
         firestore = Firestore.firestore()
+        firestore.collection("posts").getDocuments { (result, error) in
+            if let err = error {
+                print("Failed to get content: \(err.localizedDescription)")
+            }
+            guard let content = result else {
+                print("result was nil")
+                return
+            }
+            for snapShot in content.documents {
+                guard let post = Post(snapShot: snapShot) else { continue }
+                self.posts.append(post)
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

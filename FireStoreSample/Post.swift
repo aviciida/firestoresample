@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import FirebaseFirestore
 struct Post {
     let id: String
     let userId: String
@@ -23,5 +23,12 @@ struct Post {
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         self.postedAt = formatter.string(from: Date(timeIntervalSince1970: postedDate))
         self.likes = likes
+    }
+    
+    init?(snapShot: QueryDocumentSnapshot) {
+        let data = snapShot.data()
+        guard let userId = data["userId"] as? String, let content = data["content"] as? String, let postedDate = data["postedAt"] as? Double, let likes = data["likes"] as? Int else { return nil }
+        self.init(id: snapShot.documentID, userId: userId, content: content, postedDate: postedDate, likes: likes)
+
     }
 }
