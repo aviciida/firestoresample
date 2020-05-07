@@ -82,9 +82,6 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
                 guard var post = Post(snapShot: snapShot) else { continue }
                 self.posts.append(post)
             }
-            self.posts = self.posts.sorted { (a, b) -> Bool in
-                a.postedTimeInterval > b.postedTimeInterval
-            }
             self.addUserToPost()
         }
     }
@@ -111,8 +108,12 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
             }
         }
         dispatchGroup.notify(queue: .main) { [weak self] in
-            self?.posts = newPosts
-            self?.postsTableView.reloadData()
+            guard let self = self else { return }
+            self.posts = newPosts
+            self.posts = self.posts.sorted { (a, b) -> Bool in
+                a.postedTimeInterval > b.postedTimeInterval
+            }
+            self.postsTableView.reloadData()
         }
     }
     
