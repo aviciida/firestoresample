@@ -13,7 +13,7 @@ import FirebaseAuth
 class NewPostViewController: UIViewController {
     
     @IBOutlet weak var postField: UITextView!
-    var user: User!
+    var uid: String!
     var firestore: Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,12 @@ class NewPostViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             return
         }
-        self.user = user
+        self.uid = user.uid
     }
     
     @IBAction func postButtonDidTap(_ sender: Any) {
         guard let post = postField.text else { return }
-        firestore.collection("posts").addDocument(data: ["userId": user.uid, "content": post, "postedTimeInterval": Date().timeIntervalSince1970, "likedUserIds": []], completion: {[weak self] error in
+        firestore.collection("posts").addDocument(data: ["userId": uid, "content": post, "postedTimeInterval": Date().timeIntervalSince1970, "likedUserIds": []], completion: {[weak self] error in
             guard let self = self else { return }
             if let err = error {
                 print("failed to post: \(err.localizedDescription)")
