@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EC8BF992075EA7EB0AB40BF /* Pods_FireStoreSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44BB7E7DA5BAF622BAD154F /* Pods_FireStoreSample.framework */; };
+		A809A90024641D1900E1E9D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A809A8FF24641D1900E1E9D5 /* GoogleService-Info.plist */; };
 		A8409BF92463AE5C00C63151 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8409BF82463AE5C00C63151 /* Post.swift */; };
 		A8409BFB2463B89000C63151 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8409BFA2463B89000C63151 /* NewPostViewController.swift */; };
 		A8409C002463B90700C63151 /* NewPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8409BFF2463B90700C63151 /* NewPostViewController.storyboard */; };
@@ -22,7 +23,6 @@
 		A8B921122462926E0003E22F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B921102462926E0003E22F /* LaunchScreen.storyboard */; };
 		A8B9211D2462926E0003E22F /* FireStoreSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B9211C2462926E0003E22F /* FireStoreSampleTests.swift */; };
 		A8B921282462926E0003E22F /* FireStoreSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921272462926E0003E22F /* FireStoreSampleUITests.swift */; };
-		A8BCF037246298BA0054AB8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF036246298BA0054AB8F /* GoogleService-Info.plist */; };
 		A8BCF0392462ADBF0054AB8F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCF0382462ADBF0054AB8F /* SignInViewController.swift */; };
 		A8BCF03B2462ADDC0054AB8F /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */; };
 		A8BCF03D2462AE960054AB8F /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A809A8FF24641D1900E1E9D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Dropbox/Download/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8409BF82463AE5C00C63151 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8409BFA2463B89000C63151 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		A8409BFF2463B90700C63151 /* NewPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPostViewController.storyboard; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		A8B921232462926E0003E22F /* FireStoreSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireStoreSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B921272462926E0003E22F /* FireStoreSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreSampleUITests.swift; sourceTree = "<group>"; };
 		A8B921292462926E0003E22F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8BCF036246298BA0054AB8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Dropbox/Download/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8BCF0382462ADBF0054AB8F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
 		A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 		A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageViewController.storyboard; sourceTree = "<group>"; };
 		C44BB7E7DA5BAF622BAD154F /* Pods_FireStoreSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireStoreSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E761ECD139D67B149DD4632C /* Pods-FireStoreSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.debug.xcconfig"; path = "Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.debug.xcconfig"; sourceTree = "<group>"; };
-		F453B6D9E48CD32C466877C7 /* Pods-FireStoreSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.release.xcconfig"; path = "Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.release.xcconfig"; sourceTree = "<group>"; };
+		E761ECD139D67B149DD4632C /* Pods-FireStoreSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.debug.xcconfig"; sourceTree = "<group>"; };
+		F453B6D9E48CD32C466877C7 /* Pods-FireStoreSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 				A8B9210B2462926D0003E22F /* ViewController.storyboard */,
 				A8B9210E2462926E0003E22F /* Assets.xcassets */,
 				A8B921102462926E0003E22F /* LaunchScreen.storyboard */,
-				A8BCF036246298BA0054AB8F /* GoogleService-Info.plist */,
+				A809A8FF24641D1900E1E9D5 /* GoogleService-Info.plist */,
 				A8B921132462926E0003E22F /* Info.plist */,
 			);
 			path = FireStoreSample;
@@ -299,7 +299,7 @@
 			files = (
 				A8B921122462926E0003E22F /* LaunchScreen.storyboard in Resources */,
 				A8BCF03B2462ADDC0054AB8F /* SignInViewController.storyboard in Resources */,
-				A8BCF037246298BA0054AB8F /* GoogleService-Info.plist in Resources */,
+				A809A90024641D1900E1E9D5 /* GoogleService-Info.plist in Resources */,
 				A8409C022463BDBA00C63151 /* PostTableViewCell.xib in Resources */,
 				A8B9210F2462926E0003E22F /* Assets.xcassets in Resources */,
 				A8409C002463B90700C63151 /* NewPostViewController.storyboard in Resources */,
