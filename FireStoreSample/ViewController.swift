@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             let vc = storyBoard.instantiateInitialViewController()!
             self.present(vc, animated: true, completion: nil)
             return
-        }        
+        }
     }
     
     @objc func rightBarButtonTapped() {

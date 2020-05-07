@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EC8BF992075EA7EB0AB40BF /* Pods_FireStoreSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44BB7E7DA5BAF622BAD154F /* Pods_FireStoreSample.framework */; };
+		A8409BF92463AE5C00C63151 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8409BF82463AE5C00C63151 /* Post.swift */; };
 		A8B921062462926D0003E22F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921052462926D0003E22F /* AppDelegate.swift */; };
 		A8B921082462926D0003E22F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921072462926D0003E22F /* SceneDelegate.swift */; };
 		A8B9210A2462926D0003E22F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921092462926D0003E22F /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8409BF82463AE5C00C63151 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8B921022462926D0003E22F /* FireStoreSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireStoreSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B921052462926D0003E22F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B921072462926D0003E22F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B921052462926D0003E22F /* AppDelegate.swift */,
+				A8409BF82463AE5C00C63151 /* Post.swift */,
 				A8B921072462926D0003E22F /* SceneDelegate.swift */,
 				A8B921092462926D0003E22F /* ViewController.swift */,
 				A8BCF0382462ADBF0054AB8F /* SignInViewController.swift */,
@@ -357,6 +360,7 @@
 				A8B9210A2462926D0003E22F /* ViewController.swift in Sources */,
 				A8B921062462926D0003E22F /* AppDelegate.swift in Sources */,
 				A8B921082462926D0003E22F /* SceneDelegate.swift in Sources */,
+				A8409BF92463AE5C00C63151 /* Post.swift in Sources */,
 				A8BCF03F2462AEA10054AB8F /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
