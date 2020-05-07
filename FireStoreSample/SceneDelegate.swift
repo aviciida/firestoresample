@@ -20,8 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
-
         }
+        
+        let vc = UIStoryboard(name: String(describing: ViewController.self), bundle: Bundle(for: ViewController.self)).instantiateInitialViewController()!
+        let navigationController = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
