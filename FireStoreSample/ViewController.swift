@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     
     @IBOutlet weak var postsTableView: UITableView!
     var posts: [Post] = []
@@ -27,20 +27,7 @@ class ViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "menu", style: .plain, target: self, action: #selector(rightBarButtonTapped))
         navigationItem.rightBarButtonItem = rightBarButton
         
-        firestore.collection("posts").getDocuments { (result, error) in
-            if let err = error {
-                print("Failed to get content: \(err.localizedDescription)")
-            }
-            guard let content = result else {
-                print("result was nil")
-                return
-            }
-            for snapShot in content.documents {
-                guard let post = Post(snapShot: snapShot) else { continue }
-                self.posts.append(post)
-            }
-            self.postsTableView.reloadData()
-        }
+        getPosts()
     }
     
     
@@ -51,6 +38,29 @@ class ViewController: UIViewController {
             let vc = storyBoard.instantiateInitialViewController()!
             self.present(vc, animated: true, completion: nil)
             return
+        }
+    }
+    
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        getPosts()
+    }
+    
+    func getPosts() {
+        firestore.collection("posts").getDocuments { [weak self] (result, error) in
+            guard let self = self else { return }
+            if let err = error {
+                print("Failed to get content: \(err.localizedDescription)")
+            }
+            guard let content = result else {
+                print("result was nil")
+                return
+            }
+            self.posts = []
+            for snapShot in content.documents {
+                guard let post = Post(snapShot: snapShot) else { continue }
+                self.posts.append(post)
+            }
+            self.postsTableView.reloadData()
         }
     }
     
@@ -108,6 +118,7 @@ class ViewController: UIViewController {
     
     @IBAction func segueToNewPost(_ sender: Any) {
         let vc = UIStoryboard(name: String(describing: NewPostViewController.self), bundle: Bundle(for: NewPostViewController.self)).instantiateInitialViewController()!
+        vc.presentationController?.delegate = self
         present(vc, animated: true, completion: nil)
     }
     

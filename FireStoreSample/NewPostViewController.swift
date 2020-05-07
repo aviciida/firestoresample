@@ -31,10 +31,13 @@ class NewPostViewController: UIViewController {
     @IBAction func postButtonDidTap(_ sender: Any) {
         guard let post = postField.text else { return }
         firestore.collection("posts").addDocument(data: ["userId": user.uid, "content": post, "postedAt": Date().timeIntervalSince1970, "likes": 0], completion: {[weak self] error in
+            guard let self = self else { return }
             if let err = error {
                 print("failed to post: \(err.localizedDescription)")
             }
-            self?.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+            guard let presentationController = self.presentationController else { return }
+            presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
         })
     }
 }
