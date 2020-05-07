@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var firestore: Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
+        postsTableView.delegate = self
+        postsTableView.dataSource = self
         firestore = Firestore.firestore()
         firestore.collection("posts").getDocuments { (result, error) in
             if let err = error {
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
                 guard let post = Post(snapShot: snapShot) else { continue }
                 self.posts.append(post)
             }
+            self.postsTableView.reloadData()
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -102,3 +105,14 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
