@@ -14,6 +14,29 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postContentLabel: UILabel!
     @IBOutlet weak var postedDateLabel: UILabel!
     @IBOutlet weak var likedLabel: UILabel!
+    @IBOutlet weak var likeIconImage: UIImageView!
     
+    var currentUserLikedHandler: ((IndexPath?)->Void)? = nil
+    var currentUserDislikedHandler:((IndexPath?)->Void)? = nil
+    var currentUserLikedThisPost: Bool = false
     
+    @IBAction func likeButtonDidTap(_ sender: Any) {
+        let currentLikedCount = (Int(likedLabel.text ?? "0") ?? 0)
+        if currentUserLikedThisPost {
+            currentUserDislikedHandler?(getIndexPath())
+        } else {
+            currentUserLikedHandler?(getIndexPath())
+        }
+        
+    }
+    
+    func getIndexPath() -> IndexPath? {
+        guard let superView = self.superview as? UITableView else {
+            print("superview is not a UITableView - getIndexPath")
+            return nil
+        }
+        
+        let indexPath = superView.indexPath(for: self)
+        return indexPath
+    }
 }

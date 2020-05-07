@@ -14,12 +14,33 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
     @IBOutlet weak var postsTableView: UITableView!
     var posts: [Post] = []
     var firestore: Firestore!
+    var currentUserLikedHandler:((IndexPath?)->Void)? = nil
+    var currentUserDisLikedHandler:((IndexPath?)->Void)? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         postsTableView.delegate = self
         postsTableView.dataSource = self
         firestore = Firestore.firestore()
         postsTableView.register(UINib(nibName: String(describing: PostTableViewCell.self), bundle: Bundle(for: PostTableViewCell.self)), forCellReuseIdentifier: String(describing: PostTableViewCell.self))
+        
+        currentUserLikedHandler = { [weak self] indexPath in
+            guard let self = self, let user = Auth.auth().currentUser, let indexPath = indexPath else { return }
+            var post = self.posts[indexPath.row]
+            post.likedUserIds.append(user.uid)
+            self.firestore.collection("posts").document(post.id).updateData(["likedUserIds" : post.likedUserIds])
+            self.getPosts()
+        }
+        
+        currentUserDisLikedHandler = {[weak self] indexPath in
+            guard let self = self, let user = Auth.auth().currentUser, let indexPath = indexPath else { return }
+            var post = self.posts[indexPath.row]
+            post.likedUserIds.removeAll { (id) -> Bool in
+                id == user.uid
+            }
+            self.firestore.collection("posts").document(post.id).updateData(["likedUserIds" : post.likedUserIds])
+            self.getPosts()
+        }
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -106,15 +127,6 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
         present(sheet, animated: true, completion: nil)
     }
 
-    @IBAction func addData(_ sender: Any) {
-        firestore.collection("posts").addDocument(data: ["user" : "ryo", "postedAt": Date(), "content": "Firebase勉強中"]){ err in
-            if let err = err {
-                print(err.localizedDescription)
-            } else {
-                
-            }
-        }
-    }
     
     @IBAction func segueToNewPost(_ sender: Any) {
         let vc = UIStoryboard(name: String(describing: NewPostViewController.self), bundle: Bundle(for: NewPostViewController.self)).instantiateInitialViewController()!
@@ -139,6 +151,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.postContentLabel.text = post.content
         cell.postedDateLabel.text = post.postedAt
         cell.likedLabel.text = String(post.likes)
+        cell.currentUserLikedHandler = self.currentUserLikedHandler
+        cell.currentUserDislikedHandler = self.currentUserDisLikedHandler
+        if let user = Auth.auth().currentUser {
+            let liked = post.likedUserIds.contains(user.uid)
+            cell.currentUserLikedThisPost = post.likedUserIds.contains(user.uid)
+            cell.likeIconImage.image = liked ? UIImage.init(named: "heart_filled") : UIImage.init(named: "heart_empty")
+        }
         return cell
     }
     
