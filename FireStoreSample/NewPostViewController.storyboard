@@ -18,14 +18,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-jE-3Xk">
                                 <rect key="frame" x="40" y="318" width="334" height="260"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you feelin?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZDt-4i-SDp">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UI1-tf-81m">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Scs-PH-SRS"/>
+                                            <constraint firstAttribute="height" constant="200" id="8JY-4p-Cdb"/>
                                         </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-2d-H0x">
                                         <rect key="frame" x="151.5" y="230" width="31" height="30"/>
                                         <state key="normal" title="投稿"/>
@@ -35,20 +37,20 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ZDt-4i-SDp" firstAttribute="width" secondItem="9lC-jE-3Xk" secondAttribute="width" id="KKV-Fg-cGD"/>
+                                    <constraint firstItem="UI1-tf-81m" firstAttribute="width" secondItem="9lC-jE-3Xk" secondAttribute="width" id="byA-hv-m90"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cWl-Ik-A59" firstAttribute="trailing" secondItem="9lC-jE-3Xk" secondAttribute="trailing" constant="40" id="1gu-IB-bRI"/>
                             <constraint firstItem="9lC-jE-3Xk" firstAttribute="leading" secondItem="cWl-Ik-A59" secondAttribute="leading" constant="40" id="Hbs-LE-Swx"/>
-                            <constraint firstItem="9lC-jE-3Xk" firstAttribute="centerY" secondItem="x6A-nP-gm1" secondAttribute="centerY" id="SSZ-6R-f5P"/>
+                            <constraint firstItem="9lC-jE-3Xk" firstAttribute="centerY" secondItem="x6A-nP-gm1" secondAttribute="centerY" id="bpf-m3-LLf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cWl-Ik-A59"/>
                     </view>
                     <connections>
-                        <outlet property="postField" destination="ZDt-4i-SDp" id="6U8-4K-M43"/>
+                        <outlet property="postField" destination="UI1-tf-81m" id="D2X-Xk-wsM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCx-DH-h42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -12,7 +12,7 @@ import FirebaseFirestore
 import FirebaseAuth
 class NewPostViewController: UIViewController {
     
-    @IBOutlet weak var postField: UITextField!
+    @IBOutlet weak var postField: UITextView!
     var user: User!
     var firestore: Firestore!
     override func viewDidLoad() {
