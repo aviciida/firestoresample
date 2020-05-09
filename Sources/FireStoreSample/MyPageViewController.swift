@@ -25,6 +25,12 @@ class MyPageViewController: UIViewController {
             self.doneButton.isHidden = true
         }
     }
+    @IBOutlet weak var icon: UIImageView! {
+        didSet {
+            self.icon.layer.masksToBounds = true
+            self.icon.layer.cornerRadius = self.icon.bounds.width / 2
+        }
+    }
     
     var nameString: String = ""
     var uidString: String = ""
