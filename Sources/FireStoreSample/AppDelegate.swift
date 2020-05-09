@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FirebaseApp.configure()
 
         }
-        var window = UIWindow(frame: UIScreen.main.bounds)
-        var vc = UIStoryboard(name: String(describing: ViewController.self), bundle: Bundle(for: ViewController.self)).instantiateInitialViewController()!
-        var navigationController = UINavigationController(rootViewController: vc)
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = UIStoryboard(name: String(describing: ViewController.self), bundle: Bundle(for: ViewController.self)).instantiateInitialViewController()!
+        let navigationController = UINavigationController(rootViewController: vc)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return true
