@@ -124,6 +124,69 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A8505FCB2466D7DE00008545 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8409BF82463AE5C00C63151 /* Post.swift */,
+				A8409C052463FAE000C63151 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8505FCC2466D7EF00008545 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A8BCF0382462ADBF0054AB8F /* SignInViewController.swift */,
+				A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A8505FCD2466D7F800008545 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */,
+				A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A8505FCE2466D80200008545 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */,
+				A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		A8505FCF2466D80A00008545 /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				A8409BFA2463B89000C63151 /* NewPostViewController.swift */,
+				A8409BFF2463B90700C63151 /* NewPostViewController.storyboard */,
+			);
+			path = NewPost;
+			sourceTree = "<group>";
+		};
+		A8505FD02466D81300008545 /* TimeLineCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8409C012463BDBA00C63151 /* PostTableViewCell.xib */,
+				A8409C032463BDC300C63151 /* PostTableViewCell.swift */,
+			);
+			path = TimeLineCell;
+			sourceTree = "<group>";
+		};
+		A8505FD12466D82D00008545 /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				A8B921092462926D0003E22F /* ViewController.swift */,
+				A8B9210B2462926D0003E22F /* ViewController.storyboard */,
+			);
+			path = TimeLine;
+			sourceTree = "<group>";
+		};
 		A8B920F92462926D0003E22F = {
 			isa = PBXGroup;
 			children = (
@@ -150,21 +213,14 @@
 			isa = PBXGroup;
 			children = (
 				A8B921052462926D0003E22F /* AppDelegate.swift */,
-				A8409BF82463AE5C00C63151 /* Post.swift */,
-				A8409C052463FAE000C63151 /* User.swift */,
 				A8B921072462926D0003E22F /* SceneDelegate.swift */,
-				A8B921092462926D0003E22F /* ViewController.swift */,
-				A8BCF0382462ADBF0054AB8F /* SignInViewController.swift */,
-				A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */,
-				A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */,
-				A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */,
-				A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */,
-				A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */,
-				A8409BFA2463B89000C63151 /* NewPostViewController.swift */,
-				A8409BFF2463B90700C63151 /* NewPostViewController.storyboard */,
-				A8409C012463BDBA00C63151 /* PostTableViewCell.xib */,
-				A8409C032463BDC300C63151 /* PostTableViewCell.swift */,
-				A8B9210B2462926D0003E22F /* ViewController.storyboard */,
+				A8505FCB2466D7DE00008545 /* Models */,
+				A8505FD12466D82D00008545 /* TimeLine */,
+				A8505FCC2466D7EF00008545 /* SignIn */,
+				A8505FCD2466D7F800008545 /* SignUp */,
+				A8505FCE2466D80200008545 /* MyPage */,
+				A8505FCF2466D80A00008545 /* NewPost */,
+				A8505FD02466D81300008545 /* TimeLineCell */,
 				A8B9210E2462926E0003E22F /* Assets.xcassets */,
 				A8B921102462926E0003E22F /* LaunchScreen.storyboard */,
 				A809A8FF24641D1900E1E9D5 /* GoogleService-Info.plist */,
