@@ -16,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likedLabel: UILabel!
     @IBOutlet weak var likeIconImage: UIImageView!
     @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var icon: UIImageView!
     
     var currentUserLikedHandler: ((IndexPath?)->Void)? = nil
     var currentUserDislikedHandler:((IndexPath?)->Void)? = nil
