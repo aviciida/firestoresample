@@ -35,7 +35,6 @@ class MyPageViewController: UIViewController {
             let ref = Storage.storage().reference().child("images").child(uidString).child("profile")
             let imageView: UIImageView = self.icon
             imageView.sd_setImage(with: ref)
-
         }
     }
     var nameString: String = ""

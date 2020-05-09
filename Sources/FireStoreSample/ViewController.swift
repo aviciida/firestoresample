@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseUI
 class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     
     @IBOutlet weak var postsTableView: UITableView!
@@ -188,7 +189,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.likedLabel.text = String(post.likes)
         cell.currentUserLikedHandler = self.currentUserLikedHandler
         cell.currentUserDislikedHandler = self.currentUserDisLikedHandler
-        cell.displayNameLabel.text = post.user?.displayName.count == 0 ? "名無さん" : post.user!.displayName
+        if let postedUser = post.user {
+            cell.displayNameLabel.text = postedUser.displayName.count == 0 ? "名無さん" : postedUser.displayName
+            let ref = Storage.storage().reference().child("images").child(postedUser.uid).child("profile")
+            let imageView: UIImageView = cell.icon
+            imageView.sd_setImage(with: ref)
+        }
+
         if let user = Auth.auth().currentUser {
             let liked = post.likedUserIds.contains(user.uid)
             cell.currentUserLikedThisPost = post.likedUserIds.contains(user.uid)

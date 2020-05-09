@@ -12,7 +12,11 @@ import FirebaseAuth
 class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var passwordField: UITextField! {
+        didSet {
+            self.passwordField.isSecureTextEntry = true 
+        }
+    }
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             self.signInButton.isEnabled = false

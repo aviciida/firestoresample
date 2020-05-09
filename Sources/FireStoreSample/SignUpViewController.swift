@@ -13,7 +13,11 @@ import FirebaseFirestore
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var passwordField: UITextField! {
+        didSet {
+            self.passwordField.isSecureTextEntry = true
+        }
+    }
     @IBOutlet weak var registerButton: UIButton! {
         didSet {
             self.registerButton.isEnabled = false
