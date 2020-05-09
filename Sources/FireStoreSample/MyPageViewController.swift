@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+
 class MyPageViewController: UIViewController {
     
     @IBOutlet weak var displayName: UILabel!
