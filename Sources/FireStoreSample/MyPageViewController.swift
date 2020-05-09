@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 class MyPageViewController: UIViewController {
     
@@ -116,6 +117,25 @@ extension MyPageViewController: UIImagePickerControllerDelegate, UINavigationCon
 
             //ボタンの背景に選択した画像を設定
             icon.image = image
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let storageImagesRef =  storageRef.child("images").child(uidString).child("profile")
+            guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            storageImagesRef.putData(imageData, metadata: metaData){ (storageMetaData, error) in
+                if let err = error {
+                    print("Failed to upload image: \(err.localizedDescription)")
+                }
+                storageImagesRef.downloadURL { [weak self](url, error) in
+                    guard let self = self, let url = url?.absoluteString else { return }
+                    self.firestore.collection("users").document(self.uidString).updateData(["profileImageUrl": url]) { error in
+                        if let err = error {
+                            print("Failed to upload image URL to \(self.uidString): \(err.localizedDescription)")
+                        }
+                    }
+                }
+            }
         } else{
             print("Error")
         }
