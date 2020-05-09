@@ -11,6 +11,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import FirebaseUI
 
 class MyPageViewController: UIViewController {
     
@@ -31,9 +32,12 @@ class MyPageViewController: UIViewController {
         didSet {
             self.icon.layer.masksToBounds = true
             self.icon.layer.cornerRadius = self.icon.bounds.width / 2
+            let ref = Storage.storage().reference().child("images").child(uidString).child("profile")
+            let imageView: UIImageView = self.icon
+            imageView.sd_setImage(with: ref)
+
         }
     }
-    
     var nameString: String = ""
     var uidString: String = ""
     var date: Date? = nil

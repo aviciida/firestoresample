@@ -13,22 +13,25 @@ struct User {
     let uid: String
     let displayName: String
     let createdTimeInterval: Double
+    let imageUrlString: String
     var createdAt: String {
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMdkHms", options: 0, locale: Locale(identifier: "ja_JP"))
         return formatter.string(from: Date(timeIntervalSince1970: createdTimeInterval))
     }
     
-    init(uid: String, displayName: String, createdTimeInterval: Double) {
+    init(uid: String, displayName: String, createdTimeInterval: Double, imageUrlString: String) {
         self.uid = uid
         self.displayName = displayName
         self.createdTimeInterval = createdTimeInterval
+        self.imageUrlString = imageUrlString
     }
     
     init?(snapShot: DocumentSnapshot) {
         guard let data = snapShot.data() else { return nil }
         let displayName: String = data["displayName"] as? String ?? "名無さん"
+        let imageUrlString = data["profileImageUrl"] as? String ?? ""
         guard let createdTimeInterval = data["createdTimeInterval"] as? Double else { return nil }
-        self.init(uid: snapShot.documentID, displayName: displayName, createdTimeInterval: createdTimeInterval)
+        self.init(uid: snapShot.documentID, displayName: displayName, createdTimeInterval: createdTimeInterval, imageUrlString: imageUrlString)
     }
 }
