@@ -6,5 +6,7 @@ target 'FireStoreSample' do
     pod 'FirebaseFirestoreSwift'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
+    pod 'FirebaseUI/Storage'
+
 
 end
