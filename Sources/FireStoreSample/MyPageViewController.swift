@@ -36,6 +36,7 @@ class MyPageViewController: UIViewController {
     var uidString: String = ""
     var date: Date? = nil
     var firestore: Firestore!
+    var picker: UIImagePickerController! = UIImagePickerController()
     
     static func instantiate(nameString: String, uidString: String, date: Date?) -> MyPageViewController {
         let vc = UIStoryboard(name: String(describing: MyPageViewController.self), bundle: Bundle(for: MyPageViewController.self)).instantiateInitialViewController()! as MyPageViewController
@@ -90,4 +91,33 @@ class MyPageViewController: UIViewController {
         }
     }
     
+    @IBAction func imageUpload(_ sender: Any) {
+        //PhotoLibraryから画像を選択
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+
+        //デリゲートを設定する
+        picker.delegate = self
+
+        //現れるピッカーNavigationBarの文字色を設定する
+        picker.navigationBar.tintColor = UIColor.white
+
+        //現れるピッカーNavigationBarの背景色を設定する
+        picker.navigationBar.barTintColor = UIColor.gray
+
+        //ピッカーを表示する
+        present(picker, animated: true, completion: nil)
+    }
+}
+
+extension MyPageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
+
+            //ボタンの背景に選択した画像を設定
+            icon.image = image
+        } else{
+            print("Error")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
 }

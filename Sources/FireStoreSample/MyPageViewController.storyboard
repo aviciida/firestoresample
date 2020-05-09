@@ -21,20 +21,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-yn-Yf5">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="128"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-Xt-iLI">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="22Y-Nk-NF7">
                                                 <rect key="frame" x="0.0" y="34" width="60" height="60"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="v9T-Xt-iLI" secondAttribute="height" multiplier="1:1" id="cWv-i1-egB"/>
+                                                    <constraint firstAttribute="width" secondItem="22Y-Nk-NF7" secondAttribute="height" multiplier="1:1" id="gnI-ml-Ree"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="v9T-Xt-iLI" firstAttribute="centerY" secondItem="5Tp-yn-Yf5" secondAttribute="centerY" id="9b7-5X-Ydc"/>
+                                            <constraint firstItem="22Y-Nk-NF7" firstAttribute="centerX" secondItem="5Tp-yn-Yf5" secondAttribute="centerX" id="7P5-8c-4ch"/>
                                             <constraint firstAttribute="width" constant="60" id="Bwd-VH-fxv"/>
-                                            <constraint firstItem="v9T-Xt-iLI" firstAttribute="centerX" secondItem="5Tp-yn-Yf5" secondAttribute="centerX" id="glM-dK-5TA"/>
-                                            <constraint firstItem="v9T-Xt-iLI" firstAttribute="width" secondItem="5Tp-yn-Yf5" secondAttribute="width" id="vsu-KH-3Rq"/>
+                                            <constraint firstItem="22Y-Nk-NF7" firstAttribute="width" secondItem="5Tp-yn-Yf5" secondAttribute="width" id="YIt-iC-ejc"/>
+                                            <constraint firstItem="22Y-Nk-NF7" firstAttribute="centerY" secondItem="5Tp-yn-Yf5" secondAttribute="centerY" id="ceK-Oo-WLw"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fp2-t0-8L7">
@@ -105,6 +105,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4O-1I-C8A">
+                                <rect key="frame" x="177" y="418" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="imageUpload:" destination="i71-2b-XSg" eventType="touchUpInside" id="8Wf-T3-gFh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -119,7 +127,7 @@
                         <outlet property="displayName" destination="knO-Ha-u0F" id="mtJ-c9-e9w"/>
                         <outlet property="displayNameEditField" destination="vNO-9w-Xgp" id="BPS-MI-E00"/>
                         <outlet property="doneButton" destination="EJj-zR-0yz" id="mWV-U1-gXo"/>
-                        <outlet property="icon" destination="v9T-Xt-iLI" id="eJn-K4-BZ9"/>
+                        <outlet property="icon" destination="22Y-Nk-NF7" id="yhh-OS-alB"/>
                         <outlet property="uid" destination="anR-0c-zDB" id="m2N-hv-N1e"/>
                     </connections>
                 </viewController>
@@ -127,7 +135,6 @@
                 <tapGestureRecognizer id="dZ7-vh-8xb">
                     <connections>
                         <action selector="displayNameDidTap:" destination="i71-2b-XSg" id="d8P-Lq-mHz"/>
-                        <outlet property="delegate" destination="knO-Ha-u0F" id="NiY-uF-f23"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
