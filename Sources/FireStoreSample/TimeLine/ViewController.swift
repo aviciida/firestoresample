@@ -149,7 +149,7 @@ class ViewController: UIViewController, UIAdaptivePresentationControllerDelegate
                     let timeInterval = data["createdTimeInterval"] as! Double
                     date = Date(timeIntervalSince1970: timeInterval)
                 }
-                let vc = MyPageViewController.instantiate(nameString: user.displayName ?? "名無さん", uidString: user.uid, date: date)
+                let vc: UIViewController = AppEnvironment.shared.apply(MyPageViewControllerRequest(inputValue: MyPageViewControllerRequest.Input(nameString: user.displayName ?? "名無さん", uidString: user.uid, date: date)))
                 vc.presentationController?.delegate = self
                 self.present(vc, animated: true, completion: nil)
             }

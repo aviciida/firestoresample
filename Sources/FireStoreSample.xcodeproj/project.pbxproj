@@ -15,6 +15,18 @@
 		A8409C022463BDBA00C63151 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8409C012463BDBA00C63151 /* PostTableViewCell.xib */; };
 		A8409C042463BDC300C63151 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8409C032463BDC300C63151 /* PostTableViewCell.swift */; };
 		A8409C062463FAE000C63151 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8409C052463FAE000C63151 /* User.swift */; };
+		A8453EDE2467D35500D8150F /* ViewControllerProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EDD2467D35500D8150F /* ViewControllerProviderProtocol.swift */; };
+		A8453EE02467D36F00D8150F /* ViewControllerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EDF2467D36F00D8150F /* ViewControllerRequest.swift */; };
+		A8453EE22467D37F00D8150F /* ViewControllerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EE12467D37F00D8150F /* ViewControllerRequests.swift */; };
+		A8453EE52467D55A00D8150F /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EE42467D55A00D8150F /* EnvironmentProvider.swift */; };
+		A8453EE72467D79700D8150F /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EE62467D79700D8150F /* AppEnvironment.swift */; };
+		A8453EE92467DD1500D8150F /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EE82467DD1500D8150F /* Instantiatable.swift */; };
+		A8453EEB2467DD3F00D8150F /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EEA2467DD3F00D8150F /* MyPageViewController.swift */; };
+		A8453EED2467DE2E00D8150F /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EEC2467DE2E00D8150F /* MyPageView.swift */; };
+		A8453EEF2467DE3D00D8150F /* MyPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8453EEE2467DE3D00D8150F /* MyPageView.xib */; };
+		A8453EF12467EC8800D8150F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EF02467EC8800D8150F /* XibView.swift */; };
+		A8453EF32467ECB800D8150F /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EF22467ECB800D8150F /* ClassNameProtocol.swift */; };
+		A8453EF52467ECCC00D8150F /* NibProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8453EF42467ECCC00D8150F /* NibProtocol.swift */; };
 		A8B921062462926D0003E22F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921052462926D0003E22F /* AppDelegate.swift */; };
 		A8B921082462926D0003E22F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921072462926D0003E22F /* SceneDelegate.swift */; };
 		A8B9210A2462926D0003E22F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B921092462926D0003E22F /* ViewController.swift */; };
@@ -27,8 +39,6 @@
 		A8BCF03B2462ADDC0054AB8F /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */; };
 		A8BCF03D2462AE960054AB8F /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */; };
 		A8BCF03F2462AEA10054AB8F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */; };
-		A8BCF0412462CA0B0054AB8F /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */; };
-		A8BCF0432462CA190054AB8F /* MyPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,18 @@
 		A8409C012463BDBA00C63151 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		A8409C032463BDC300C63151 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		A8409C052463FAE000C63151 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8453EDD2467D35500D8150F /* ViewControllerProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProviderProtocol.swift; sourceTree = "<group>"; };
+		A8453EDF2467D36F00D8150F /* ViewControllerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRequest.swift; sourceTree = "<group>"; };
+		A8453EE12467D37F00D8150F /* ViewControllerRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRequests.swift; sourceTree = "<group>"; };
+		A8453EE42467D55A00D8150F /* EnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentProvider.swift; sourceTree = "<group>"; };
+		A8453EE62467D79700D8150F /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		A8453EE82467DD1500D8150F /* Instantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
+		A8453EEA2467DD3F00D8150F /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		A8453EEC2467DE2E00D8150F /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		A8453EEE2467DE3D00D8150F /* MyPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageView.xib; sourceTree = "<group>"; };
+		A8453EF02467EC8800D8150F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		A8453EF22467ECB800D8150F /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		A8453EF42467ECCC00D8150F /* NibProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibProtocol.swift; sourceTree = "<group>"; };
 		A8B921022462926D0003E22F /* FireStoreSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireStoreSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B921052462926D0003E22F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B921072462926D0003E22F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +96,6 @@
 		A8BCF03A2462ADDC0054AB8F /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
 		A8BCF03C2462AE960054AB8F /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
 		A8BCF03E2462AEA10054AB8F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageViewController.storyboard; sourceTree = "<group>"; };
 		C44BB7E7DA5BAF622BAD154F /* Pods_FireStoreSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireStoreSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E761ECD139D67B149DD4632C /* Pods-FireStoreSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.debug.xcconfig"; sourceTree = "<group>"; };
 		F453B6D9E48CD32C466877C7 /* Pods-FireStoreSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireStoreSample.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-FireStoreSample/Pods-FireStoreSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +144,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A8453EF62467ECFF00D8150F /* ViewCore */ = {
+			isa = PBXGroup;
+			children = (
+				A8453EF02467EC8800D8150F /* XibView.swift */,
+				A8453EF22467ECB800D8150F /* ClassNameProtocol.swift */,
+				A8453EF42467ECCC00D8150F /* NibProtocol.swift */,
+			);
+			path = ViewCore;
+			sourceTree = "<group>";
+		};
 		A8505FCB2466D7DE00008545 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +184,9 @@
 		A8505FCE2466D80200008545 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				A8BCF0402462CA0B0054AB8F /* MyPageViewController.swift */,
-				A8BCF0422462CA190054AB8F /* MyPageViewController.storyboard */,
+				A8453EEA2467DD3F00D8150F /* MyPageViewController.swift */,
+				A8453EEC2467DE2E00D8150F /* MyPageView.swift */,
+				A8453EEE2467DE3D00D8150F /* MyPageView.xib */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -214,6 +245,13 @@
 			children = (
 				A8B921052462926D0003E22F /* AppDelegate.swift */,
 				A8B921072462926D0003E22F /* SceneDelegate.swift */,
+				A8453EE62467D79700D8150F /* AppEnvironment.swift */,
+				A8453EDD2467D35500D8150F /* ViewControllerProviderProtocol.swift */,
+				A8453EE42467D55A00D8150F /* EnvironmentProvider.swift */,
+				A8453EDF2467D36F00D8150F /* ViewControllerRequest.swift */,
+				A8453EE12467D37F00D8150F /* ViewControllerRequests.swift */,
+				A8453EE82467DD1500D8150F /* Instantiatable.swift */,
+				A8453EF62467ECFF00D8150F /* ViewCore */,
 				A8505FCB2466D7DE00008545 /* Models */,
 				A8505FD12466D82D00008545 /* TimeLine */,
 				A8505FCC2466D7EF00008545 /* SignIn */,
@@ -360,8 +398,8 @@
 				A8B9210F2462926E0003E22F /* Assets.xcassets in Resources */,
 				A8409C002463B90700C63151 /* NewPostViewController.storyboard in Resources */,
 				A8B9210D2462926D0003E22F /* ViewController.storyboard in Resources */,
+				A8453EEF2467DE3D00D8150F /* MyPageView.xib in Resources */,
 				A8BCF03D2462AE960054AB8F /* SignUpViewController.storyboard in Resources */,
-				A8BCF0432462CA190054AB8F /* MyPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,15 +466,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8453EF12467EC8800D8150F /* XibView.swift in Sources */,
 				A8BCF0392462ADBF0054AB8F /* SignInViewController.swift in Sources */,
-				A8BCF0412462CA0B0054AB8F /* MyPageViewController.swift in Sources */,
+				A8453EE92467DD1500D8150F /* Instantiatable.swift in Sources */,
+				A8453EEB2467DD3F00D8150F /* MyPageViewController.swift in Sources */,
 				A8B9210A2462926D0003E22F /* ViewController.swift in Sources */,
+				A8453EED2467DE2E00D8150F /* MyPageView.swift in Sources */,
+				A8453EE22467D37F00D8150F /* ViewControllerRequests.swift in Sources */,
+				A8453EF52467ECCC00D8150F /* NibProtocol.swift in Sources */,
 				A8B921062462926D0003E22F /* AppDelegate.swift in Sources */,
+				A8453EE72467D79700D8150F /* AppEnvironment.swift in Sources */,
 				A8B921082462926D0003E22F /* SceneDelegate.swift in Sources */,
 				A8409BFB2463B89000C63151 /* NewPostViewController.swift in Sources */,
 				A8409BF92463AE5C00C63151 /* Post.swift in Sources */,
 				A8BCF03F2462AEA10054AB8F /* SignUpViewController.swift in Sources */,
 				A8409C062463FAE000C63151 /* User.swift in Sources */,
+				A8453EF32467ECB800D8150F /* ClassNameProtocol.swift in Sources */,
+				A8453EE52467D55A00D8150F /* EnvironmentProvider.swift in Sources */,
+				A8453EDE2467D35500D8150F /* ViewControllerProviderProtocol.swift in Sources */,
+				A8453EE02467D36F00D8150F /* ViewControllerRequest.swift in Sources */,
 				A8409C042463BDC300C63151 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
